@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import useStyles from '../Style';
 import {
@@ -7,16 +7,16 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Collapse,
 } from '@material-ui/core';
 import BrushIcon from '@material-ui/icons/Brush';
 import HistoryIcon from '@material-ui/icons/History';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
+import HistoryList from './HistoryList';
 
 export default () => {
+  const [open, toggleOpen] = useState(false);
   const classes = useStyles();
-  const open = false;
   return (
     <Drawer
       className={classes.drawer}
@@ -34,13 +34,14 @@ export default () => {
           </ListItemIcon>
           <ListItemText primary={'Draw'} />
         </ListItem>
-        <ListItem button onClick={() => console.log('c')}>
+        <ListItem button onClick={() => toggleOpen(!open)}>
           <ListItemIcon>
             <HistoryIcon />
           </ListItemIcon>
           <ListItemText primary="History" />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
+        <HistoryList open={open} />
       </List>
     </Drawer>
   );

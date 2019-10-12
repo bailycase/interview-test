@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { AppBar, Toolbar, CssBaseline } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Sidebar from './Components/Sidebar';
