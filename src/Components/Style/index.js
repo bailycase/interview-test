@@ -1,11 +1,11 @@
-import { createStyles,  makeStyles } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 const drawerWidth = 240;
-const useStyles = makeStyles((theme) =>
-    createStyles({
+const useStyles = makeStyles(theme =>
+  createStyles({
     root: {
       display: 'flex',
       width: '100vw',
-      height: '100vh'
+      height: '100vh',
     },
     appBar: {
       width: `calc(100% - ${drawerWidth}px)`,
@@ -26,4 +26,4 @@ const useStyles = makeStyles((theme) =>
   }),
 );
 
-export default useStyles
+export default useStyles;

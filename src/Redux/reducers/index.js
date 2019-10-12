@@ -1,3 +1,3 @@
-import shapes from './shapes'
+import shapes from './shapes';
 
-export default shapes
+export default shapes;
