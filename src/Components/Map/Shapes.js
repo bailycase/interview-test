@@ -12,7 +12,14 @@ const Shapes = props => {
           return <Polygon defaultEditable={true} key={key} path={points} />;
         }
         if (shapeType === 'Circle') {
-          return <Circle key={key} center={center} radius={radius} />;
+          return (
+            <Circle
+              defaultEditable={true}
+              key={key}
+              center={center}
+              radius={radius}
+            />
+          );
         } else {
           return null;
         }
