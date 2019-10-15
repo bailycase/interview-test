@@ -1,11 +1,22 @@
 import React from 'react';
-import { Paper, Button } from '@material-ui/core';
+import { List, ListItem } from '@material-ui/core';
+import { connect } from 'react-redux';
 
-export default () => {
+const DrawingPalette = props => {
+  const { dispatch } = props;
   return (
-    <Paper style={{ height: `100%`, width: `25%` }}>
-      <Button>Polygon</Button>
-      <Button>Circle</Button>
-    </Paper>
+    <List>
+      <ListItem button onClick={() => dispatch({ type: 'DRAW_EDIT' })}>
+        Edit
+      </ListItem>
+      <ListItem button onClick={() => dispatch({ type: 'DRAW_POLYGON' })}>
+        Polygon
+      </ListItem>
+      <ListItem button onClick={() => dispatch({ type: 'DRAW_CIRCLE' })}>
+        Circle
+      </ListItem>
+    </List>
   );
 };
+
+export default connect()(DrawingPalette);

@@ -8,7 +8,6 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@material-ui/core';
-import BrushIcon from '@material-ui/icons/Brush';
 import HistoryIcon from '@material-ui/icons/History';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
@@ -28,12 +27,6 @@ export default () => {
     >
       <Divider />
       <List>
-        <ListItem button>
-          <ListItemIcon>
-            <BrushIcon />{' '}
-          </ListItemIcon>
-          <ListItemText primary={'Draw'} />
-        </ListItem>
         <ListItem button onClick={() => toggleOpen(!open)}>
           <ListItemIcon>
             <HistoryIcon />
