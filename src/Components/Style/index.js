@@ -23,6 +23,9 @@ const useStyles = makeStyles(theme =>
       flexGrow: 1,
       backgroundColor: theme.palette.background.default,
     },
+    card: {
+      minWidth: 275,
+    },
   }),
 );
 

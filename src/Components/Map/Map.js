@@ -18,6 +18,7 @@ const GoogleMapWithMarker = withGoogleMap(props => (
 const Map = props => {
   const { dispatch, drawingMode } = props;
   const google = window.google;
+  const currentTime = new Date().toLocaleTimeString();
   return (
     <Box display="flex">
       <DrawingPalette />
@@ -45,6 +46,7 @@ const Map = props => {
               type: 'ADD_POLYGON',
               shapeType: 'Polygon',
               points: e.latLngs.g[0].g,
+              createdAt: currentTime,
             });
           }}
           onCircleComplete={e => {
@@ -54,6 +56,7 @@ const Map = props => {
               shapeType: 'Circle',
               center: { lat: e.center.lat(), lng: e.center.lng() },
               radius: e.radius,
+              createdAt: currentTime,
             });
           }}
         />
